@@ -38,7 +38,7 @@ export async function getStaticPaths() {
         client.close();
 
   return {
-    fallback: false, //it tells nextjs whether the path contain all mmetup id value o some.
+    fallback: "blocking", //it tells nextjs whether the path contain all mmetup id value o some.
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
